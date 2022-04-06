@@ -1,0 +1,48 @@
+Algorithm 6
+1.)
+function resetNegatives(arr) {
+        for (var i = 0; i < arr.length; i++) {
+          if (arr[i] < 0) {
+            arr[i] = 0;
+          }
+        }
+        return arr;
+      }
+      a = resetNegatives([1, 2, -1, -2]);
+      console.log(a);
+
+2.)
+function moveForward(arr) {
+        var array = [];
+        for (var i = 0; i < arr.length - 1; i++) {
+          array.push(arr[i + 1]);
+        }
+        array.push(0);
+        return array;
+      }
+      a = moveForward([1, 2, 3, 4, 5]);
+      console.log(a);
+
+
+3.)
+function returnReversed(arr) {
+        var arr2 = [];
+        for (var i = arr.length - 1; i >= 0; i--) {
+          arr2.push(arr[i]);
+        }
+        return arr2;
+      }
+      a = returnReversed([1, 2, 3, 4, 5]);
+      console.log(a);
+
+4.)
+function repeatTwice(arr) {
+        var repeat = [];
+        for (var i = 0; i < arr.length; i++) {
+          repeat.push(arr[i]);
+          repeat.push(arr[i]);
+        }
+        return repeat;
+      }
+      a = repeatTwice([4, 'Daezon', 8, true]);
+      console.log(a);

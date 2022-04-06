@@ -1,0 +1,57 @@
+Algorithm 5
+1).
+function greaterThanY(arr, y) {
+   let x = 0;
+   for (let i = 0; i < arr.length; i++) {
+      if (arr[i] > y) {
+         x = x + 1;
+      }
+   }
+   return x;
+}
+a = greaterThanY([7, 5, 3, 4, 9, 4], 2);
+console.log(a);
+
+
+2).
+function max_min_avg(arr) {
+  var max = arr[0];
+  var min = arr[0];
+  var sum = arr[0];
+  for (var i = 1; i < arr.length; i++) {
+     if (arr[i] > max) {
+        max = arr[i];
+     }
+     if (arr[i] < min) {
+        min = arr[i];
+     }
+     sum = sum + arr[i];
+  }
+  var avg = sum / arr.length;
+  var array = [max, min, avg];
+  return array;
+}
+a = max_min_avg([100, 200, 300, 400, 500]);
+console.log(a);
+
+
+3).
+function replaceNum(arr) {
+   for (var i = 0; i < arr.length; i++) {
+      if (arr[i] < 0) {
+         arr[i] = 'Coding';
+      }
+   }
+   return arr;
+}
+a = replaceNum([1, 2, -3, -5, 5]);
+console.log(a);
+
+
+4).
+function removeValue(arr, start, end) {
+  arr.splice(start, end - start + 1);
+  return arr;
+}
+a = removeValue([10, 20, 30, 40, 50, 60], 2, 4);
+console.log(a);
