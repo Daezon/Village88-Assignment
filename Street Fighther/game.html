@@ -1,0 +1,264 @@
+<style>
+  body {
+    background-color: black;
+  }
+
+  #background {
+    width: 800px;
+    height: 260px;
+    background: url("background_blanka.gif");
+    background-size: cover;
+  }
+
+  #character1 {
+    background: url("ken.png") 0px -80px;
+    width: 70px;
+    height: 80px;
+    position: absolute;
+  }
+
+  #character2 {
+    background: url("ken.png") -70px -160px;
+    width: 70px;
+    height: 80px;
+    position: absolute;
+    transform: scaleX(-1);
+  }
+
+  #healthbar1 {
+    width: 200px;
+    height: 15px;
+    background-color: lightgreen;
+    border: 3px solid green;
+    position: absolute;
+    top: 30px;
+    left: 25px;
+  }
+
+  #healthbar2 {
+    width: 200px;
+    height: 15px;
+    background-color: pink;
+    border: 3px solid red;
+    position: absolute;
+    top: 30px;
+    left: 325px;
+  }
+</style>
+
+<div id="background">
+  <div id="character1"></div>
+  <div id="character2"></div>
+
+  <div id="healthbar1"></div>
+  <div id="healthbar2"></div>
+</div>
+
+<script>
+  var action = "STANDING";
+  var enemy_action = "STANDING";
+  var which_frame = 0;
+  var which_frame2 = 0;
+
+  var character1 = {
+    top: 185,
+    left: 100,
+    health: 100,
+  };
+  var character2 = {
+    top: 185,
+    left: 400,
+    health: 100,
+  };
+
+  function GameLoop() {
+    moveEnemy();
+    displayCharacters();
+    CheckWinner(character1.health * 2.3);
+    CheckWinner(character2.health * 2.3);
+  }
+
+  var gamingtime = setInterval(GameLoop, 100);
+
+  function displayCharacters() {
+    document.getElementById("character1").style.top = character1.top;
+    document.getElementById("character1").style.left = character1.left;
+
+    document.getElementById("character2").style.top = character2.top;
+    document.getElementById("character2").style.left = character2.left;
+
+    document.getElementById("healthbar1").style.width = character1.health * 2.3;
+    document.getElementById("healthbar2").style.width = character2.health * 2.3;
+
+    if (action == "STANDING") {
+      document.getElementById("character1").style.background =
+        "url('ken.png') -" + which_frame * 70 + "px -80px";
+      which_frame = which_frame + 1;
+
+      if (which_frame >= 4) {
+        which_frame = 0;
+      }
+
+      document.getElementById("character2").style.background =
+        "url('ken.png') -" + which_frame * 70 + "px -80px";
+      which_frame = which_frame + 1;
+
+      if (which_frame >= 4) {
+        which_frame = 0;
+      }
+    } else if (action == "PUNCH") {
+      if (
+        which_frame == 2 &&
+        character1.left > character2.left - 50 &&
+        character1.left < character2.left
+      ) {
+        character2.health = character2.health - 5;
+        var punch = new Audio("punch1.mp3");
+        punch.play();
+      }
+      document.getElementById("character1").style.background =
+        "url('ken.png') -" + which_frame * 70 + "px -160px";
+      which_frame = which_frame + 1;
+
+      if (which_frame >= 3) {
+        which_frame = 0;
+        action = "STANDING";
+      }
+    } else if (action == "ROUND_KICK") {
+      if (
+        which_frame == 2 &&
+        character1.left > character2.left - 50 &&
+        character1.left < character2.left
+      ) {
+        character2.health = character2.health - 8;
+        var kick = new Audio("kick1.mp3");
+        kick.play();
+      }
+
+      document.getElementById("character1").style.background =
+        "url('ken.png') -" + which_frame * 70 + "px -560px";
+      which_frame = which_frame + 1;
+
+      if (which_frame >= 5) {
+        which_frame = 0;
+        action = "STANDING";
+      }
+    } else if (action == "SEAT") {
+      document.getElementById("character1").style.background =
+        "url('ken.png') -" + which_frame * 70 + "px -720px";
+      which_frame = which_frame + 1;
+
+      if (which_frame >= 1) {
+        which_frame = 0;
+        action = "STANDING";
+      }
+    } else if (action == "JUMP") {
+      document.getElementById("character1").style.background =
+        "url('ken.png') -" + which_frame * 70 + "px -650px";
+      which_frame = which_frame + 1;
+
+      if (which_frame >= 7) {
+        which_frame = 0;
+        action = "STANDING";
+      }
+    }
+
+    // enemy action
+    if (enemy_action == "STANDING") {
+      document.getElementById("character2").style.background =
+        "url('ken.png') -" + which_frame2 * 70 + "px -80px";
+      which_frame2 = which_frame2 + 1;
+
+      if (which_frame2 >= 4) {
+        which_frame2 = 0;
+      }
+    } else if (enemy_action == "PUNCH") {
+      if (
+        which_frame2 == 2 &&
+        character2.left > character1.left - 50 &&
+        character2.left < character1.left
+      ) {
+        character1.health = character1.health - 5;
+      }
+      document.getElementById("character2").style.background =
+        "url('ken.png') -" + which_frame2 * 70 + "px -160px";
+      which_frame2 = which_frame2 + 1;
+
+      if (which_frame2 >= 3) {
+        which_frame2 = 0;
+        enemy_action = "STANDING";
+      }
+    } else if (enemy_action == "ROUND_KICK") {
+      if (
+        which_frame2 == 2 &&
+        character2.left > character1.left - 50 &&
+        character2.left < character1.left
+      ) {
+        character1.health = character1.health - 8;
+      }
+      document.getElementById("character2").style.background =
+        "url('ken.png') -" + which_frame2 * 70 + "px -700px";
+      which_frame2 = which_frame2 + 1;
+
+      if (which_frame2 >= 5) {
+        which_frame2 = 0;
+        enemy_action = "STANDING";
+      }
+    }
+  }
+
+  //   KO
+  function CheckWinner(health) {
+    if (health < 1) {
+      clearInterval(gamingtime);
+      var KO = new Audio("KO.mp3");
+      KO.play();
+    }
+  }
+
+  function moveEnemy() {
+    var move = Math.floor(Math.random() * 4) + 1;
+    if (
+      move == 3 &&
+      character2.left > character1.left - 150 &&
+      character2.left < character1.left + 50
+    ) {
+      enemy_action = "PUNCH";
+      var punch2 = new Audio("punch2.mp3");
+      punch2.play();
+    } else if (
+      move == 4 &&
+      character2.left > character1.left - 150 &&
+      character2.left < character1.left + 50
+    ) {
+      action2 = "ROUND_KICK";
+      var kick2 = new Audio("kick2.mp3");
+      kick2.play();
+    } else if (move == 1 && character2.left > 0) {
+      character2.left = character2.left - 10;
+    } else if (move == 2 && character2.left < 750) {
+      character2.left = character2.left + 10;
+    }
+  }
+
+  //   move
+  document.onkeydown = function (e) {
+    console.log(e);
+    if (e.keyCode == 37 && character1.left > 0) {
+      character1.left = character1.left - 10;
+    } else if (e.keyCode == 39 && character1.left < 800) {
+      character1.left = character1.left + 10;
+    } else if (e.keyCode == 81) {
+      action = "PUNCH";
+    } else if (e.keyCode == 69) {
+      action = "ROUND_KICK";
+    } else if (e.keyCode == 67) {
+      action = "SEAT";
+    } else if (e.keyCode == 32) {
+      action = "JUMP";
+    }
+
+    which_frame = 0;
+  };
+  displayCharacters();
+</script>
