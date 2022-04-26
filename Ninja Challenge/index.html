@@ -16,7 +16,7 @@
     <script type="text/javascript">
       var leftValue = 450,
         topValue = 100,
-        direction = 'down',
+        direction = "down",
         step = 1;
 
       function update() {
@@ -25,9 +25,9 @@
         } else {
           step = 1;
         }
-        document.getElementById('character').style.left = leftValue + 'px';
-        document.getElementById('character').style.top = topValue + 'px';
-        document.getElementById('character').style.backgroundImage =
+        document.getElementById("character").style.left = leftValue + "px";
+        document.getElementById("character").style.top = topValue + "px";
+        document.getElementById("character").style.backgroundImage =
           "url('img/" + direction + step + ".png')";
       }
 
@@ -37,22 +37,22 @@
         // LEFT
         if (e.keyCode == 37 && leftValue > 0) {
           leftValue = leftValue - 10;
-          direction = 'left';
+          direction = "left";
         }
         // RIGHT
         else if (e.keyCode == 39 && leftValue < 1860) {
           leftValue = leftValue + 10;
-          direction = 'right';
+          direction = "right";
         }
         // DOWN
         else if (e.keyCode == 40 && topValue < 880) {
           topValue = topValue + 10;
-          direction = 'down';
+          direction = "down";
         }
         // TOP
         else if (e.keyCode == 38 && topValue > 0) {
           topValue = topValue - 10;
-          direction = 'top';
+          direction = "top";
         }
         // ...
         update();

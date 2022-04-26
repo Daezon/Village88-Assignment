@@ -254,17 +254,17 @@
       setInterval(gameloop, 40);
 
       document.onkeydown = function (a) {
-        if (a.keyCode == 37) {
+        if (a.keyCode === 37) {
           //left
           hero.x -= 10;
-        } else if (a.keyCode == 39) {
+        } else if (a.keyCode === 39) {
           //right
           hero.x += 10;
-        } else if (a.keyCode == 40) {
+        } else if (a.keyCode === 40) {
           hero.y += 10;
-        } else if (a.keyCode == 38) {
+        } else if (a.keyCode === 38) {
           hero.y -= 10;
-        } else if (a.keyCode == 32) {
+        } else if (a.keyCode === 32) {
           bullets.push({ x: hero.x + 8, y: hero.y - 15 });
           var bulletSound = new Audio("gunshot.mp3");
           bulletSound.play();
