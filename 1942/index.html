@@ -66,6 +66,7 @@
       }
     </style>
   </head>
+
   <body>
     <div id="container">
       <div id="container">
@@ -97,59 +98,49 @@
         { x: 550, y: 50 },
       ];
 
-      // var enemies2 = [{ x: 2, y: 5 }, { x: 650, y: 500 }, { x: 800, y: 750 },{ x: -500, y: 720 },{ x: 530, y: 45 },{ x: 240, y: 450 },{ x: 30, y: 45 }];
+      var enemies2 = [
+        { x: 2, y: 5 },
+        { x: 650, y: 500 },
+        { x: 800, y: 750 },
+        { x: -500, y: 720 },
+        { x: 530, y: 45 },
+        { x: 240, y: 450 },
+        { x: 30, y: 45 },
+      ];
 
       function displayHero() {
-        document.getElementById("hero").style["top"] = hero.y + "px";
-        document.getElementById("hero").style["left"] = hero.x + "px";
+        let heroElement = document.getElementById("hero");
+
+        heroElement.style.top = hero.y + "px";
+        heroElement.style.left = hero.x + "px";
       }
 
-      function displayEnemies() {
+      // comment here
+      function displayCurrentEnemies(arrayEnemies, classElement, name) {
         var output = "";
-        for (var i = 0; i < enemies.length; i++) {
+        for (var i = 0; i < arrayEnemies.length; i++) {
           output +=
-            "<div class='enemy1' style='top:" +
-            enemies[i].y +
+            "<div class='" +
+            classElement +
+            "' style='top:" +
+            arrayEnemies[i].y +
             "px; left:" +
-            enemies[i].x +
-            "px;'></div>";
-          //		console.log(output)
-        }
-        document.getElementById("enemies").innerHTML = output;
-      }
-
-      function displayEnemies2() {
-        var output = "";
-        for (var i = 0; i < enemies2.length; i++) {
-          output +=
-            "<div class='enemy2' style='top:" +
-            enemies2[i].y +
-            "px; left:" +
-            enemies2[i].x +
+            arrayEnemies[i].x +
             "px;'></div>";
         }
-        //console.log(output)
-        document.getElementById("enemies2").innerHTML = output;
+
+        document.getElementById(name).innerHTML = output;
       }
 
-      function moveEnemies() {
-        for (var i = 0; i < enemies.length; i++) {
-          enemies[i].y += 5;
+      // comment here
+      function moveCurrentEnemies(arrayEnemies, moveXValue) {
+        for (let index = 0; index < arrayEnemies.length; index++) {
+          arrayEnemies[index].y += 5;
 
-          if (enemies[i].y > 540) {
-            enemies[i].y = 0;
-            enemies[i].x = Math.random() * 400;
-          }
-        }
-      }
-
-      function moveEnemies2() {
-        for (var i = 0; i < enemies2.length; i++) {
-          enemies2[i].y += 5;
-
-          if (enemies2[i].y > 540) {
-            enemies2[i].y = 0;
-            enemies2[i].x = Math.random() * 300;
+          // comment here
+          if (arrayEnemies[index].y > 540) {
+            arrayEnemies[index].y = 0;
+            arrayEnemies[index].x = Math.random() * moveXValue;
           }
         }
       }
@@ -161,67 +152,45 @@
           if (bullets[i].y < 0) {
             bullets[i] = bullets[bullets.length - 1];
             bullets.pop();
-            // console.log(bullets);
           }
         }
       }
 
+      function enemiesBulletCollision(arrayEnemies, bulletIndex) {
+        for (let index = 0; index < arrayEnemies.length; index++) {
+          if (
+            Math.abs(bullets[bulletIndex].x - arrayEnemies[index].x) < 10 &&
+            Math.abs(bullets[bulletIndex].y - arrayEnemies[index].y) < 10
+          ) {
+            score += 10;
+            var element = document.getElementById("explode");
+            element.classList.add("explode");
+            element.style.top = arrayEnemies[index].y + "px";
+            element.style.left = arrayEnemies[index].x + "px";
+            arrayEnemies.splice(index, 1);
+            var explosionSound = new Audio("explosion.mp3");
+            explosionSound.volume = 0.2;
+            explosionSound.play();
+          }
+
+          if (
+            Math.abs(arrayEnemies[index].x - hero.x) < 10 &&
+            Math.abs(arrayEnemies[index].y - hero.y) < 10
+          ) {
+            score -= 500;
+          }
+        }
+      }
+
+      // comment here
       function detectCollision() {
-        for (var i = 0; i < bullets.length; i++) {
-          for (var j = 0; j < enemies.length; j++) {
-            if (
-              Math.abs(bullets[i].x - enemies[j].x) < 10 &&
-              Math.abs(bullets[i].y - enemies[j].y) < 10
-            ) {
-              //	console.log('bullet', i, 'and enemy', k, "collided");
-              score += 10;
-              var element = document.getElementById("explode");
-              element.classList.add("explode");
-              element.style.top = enemies[j].y + "px";
-              element.style.left = enemies[j].x + "px";
-              enemies.splice(j, 1);
-              var explosionSound = new Audio("explosion.mp3");
-              explosionSound.play();
-              //	console.log(element)
-            }
-          }
-
-          for (var k = 0; k < enemies2.length; k++) {
-            if (
-              Math.abs(bullets[i].x - enemies2[k].x) < 10 &&
-              Math.abs(bullets[i].y - enemies2[k].y) < 10
-            ) {
-              score += 10;
-              var element = document.getElementById("explode");
-              element.classList.add("explode");
-              element.style.top = enemies2[k].y + "px";
-              element.style.left = enemies2[k].x + "px";
-              enemies2.splice(k, 1);
-              var explosionSound = new Audio("explosion.mp3");
-              explosionSound.play();
-            }
-          }
-
-          for (var j = 0; j < enemies.length; j++) {
-            if (
-              Math.abs(enemies[j].x - hero.x) < 10 &&
-              Math.abs(enemies[j].y - hero.y) < 10
-            ) {
-              score -= 500;
-            }
-          }
-
-          for (var j = 0; j < enemies2.length; j++) {
-            if (
-              Math.abs(enemies2[j].x - hero.x) < 10 &&
-              Math.abs(enemies2[j].y - hero.y) < 10
-            ) {
-              score -= 500;
-            }
-          }
+        for (var index = 0; index < bullets.length; index++) {
+          enemiesBulletCollision(enemies, index);
+          enemiesBulletCollision(enemies2, index);
         }
       }
 
+      // comment here
       function displayBullets() {
         //console.log("came here!!");
         var output = "";
@@ -242,13 +211,13 @@
 
       function gameloop() {
         displayHero();
-        moveEnemies();
-        displayEnemies();
-        displayEnemies2();
+        moveCurrentEnemies(enemies, 400);
+        moveCurrentEnemies(enemies2, 300);
+        displayCurrentEnemies(enemies, "enemy1", "enemies");
+        displayCurrentEnemies(enemies2, "enemy2", "enemies2");
         moveBullets();
         displayBullets();
         detectCollision();
-        moveEnemies2();
         displayScore();
       }
       setInterval(gameloop, 40);
@@ -267,11 +236,13 @@
         } else if (a.keyCode === 32) {
           bullets.push({ x: hero.x + 8, y: hero.y - 15 });
           var bulletSound = new Audio("gunshot.mp3");
+          bulletSound.volume = 0.2;
           bulletSound.play();
           displayBullets();
         }
         displayHero();
       };
+
       gameloop();
     </script>
   </body>

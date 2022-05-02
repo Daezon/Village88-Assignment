@@ -96,6 +96,8 @@
     <script>
       var world;
       var map = Math.floor(Math.random() * 5);
+
+      // comment here
       if (map === 1) {
         world = [
           [
@@ -187,7 +189,9 @@
             2, 2, 2, 2, 2, 2, 2,
           ],
         ];
-      } else if (map === 2) {
+      }
+      // comment here
+      else if (map === 2) {
         world = [
           [
             2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2,
@@ -278,7 +282,9 @@
             2, 2, 2, 2, 2, 2, 2,
           ],
         ];
-      } else if (map === 3) {
+      }
+      // comment here
+      else if (map === 3) {
         world = [
           [
             2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2,
@@ -369,7 +375,9 @@
             2, 2, 2, 2, 2, 2, 2,
           ],
         ];
-      } else if (map === 4) {
+      }
+      // comment here
+      else if (map === 4) {
         world = [
           [
             2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2,
@@ -460,7 +468,9 @@
             2, 2, 2, 2, 2, 2, 2,
           ],
         ];
-      } else if (map === 5) {
+      }
+      // comment here
+      else if (map === 5) {
         world = [
           [
             2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2,
@@ -573,8 +583,11 @@
         x: 20,
         y: 10,
       };
+
+      // comment here
       function displayWorld() {
         var output = "";
+
         for (var i = 0; i < world.length; i++) {
           output += "\n<div class='row'>\n";
 
@@ -591,28 +604,36 @@
           }
           output += "\n</div>";
         }
-        // console.log(output);
+
         document.getElementById("world").innerHTML = output;
       }
 
+      // comment here
       function displayPacman() {
-        document.getElementById("pacman").style.top = pacman.y * 20 + "px";
-        document.getElementById("pacman").style.left = pacman.x * 20 + "px";
-        document.getElementById("pacman").style.transform =
-          "rotate(" + pacman.deg + "deg)";
+        let pacmanElement = document.getElementById("pacman");
+
+        pacmanElement.style.top = pacman.y * 20 + "px";
+        pacmanElement.style.left = pacman.x * 20 + "px";
+        pacmanElement.style.transform = "rotate(" + pacman.deg + "deg)";
       }
 
+      // comment here
       function displayGhost(id, ghost) {
-        document.getElementById(id).style.top = ghost.y * 20 + "px";
-        document.getElementById(id).style.left = ghost.x * 20 + "px";
+        let ghostElement = document.getElementById(id);
+
+        ghostElement.style.top = ghost.y * 20 + "px";
+        ghostElement.style.left = ghost.x * 20 + "px";
       }
 
+      // comment here
       function displayScore() {
         document.getElementById("score").innerHTML = score;
       }
 
+      // comment here
       function moveGhosts(id, ghost) {
         var moveDir = Math.floor(Math.random() * 4) + 1;
+
         if (moveDir === 1 && world[ghost.y][ghost.x - 1] != 2) {
           // LEFT
           ghost.x--;
@@ -637,39 +658,42 @@
       displayGhost("ghost2", ghost2);
       displayGhost("ghost3", ghost3);
 
+      // comment here
       document.onkeydown = function (e) {
-        if (e.keyCode == 37 && world[pacman.y][pacman.x - 1] != 2) {
+        if (e.keyCode === 37 && world[pacman.y][pacman.x - 1] !== 2) {
           //LEFT
           pacman.x--;
           pacman.deg = 180;
-        } else if (e.keyCode === 39 && world[pacman.y][pacman.x + 1] != 2) {
+        } else if (e.keyCode === 39 && world[pacman.y][pacman.x + 1] !== 2) {
           //Right
           pacman.x++;
           pacman.deg = 0;
-        } else if (e.keyCode === 38 && world[pacman.y - 1][pacman.x] != 2) {
+        } else if (e.keyCode === 38 && world[pacman.y - 1][pacman.x] !== 2) {
           //UP
           pacman.y--;
           pacman.deg = -90;
-        } else if (e.keyCode === 40 && world[pacman.y + 1][pacman.x] != 2) {
+        } else if (e.keyCode === 40 && world[pacman.y + 1][pacman.x] !== 2) {
           //Down
           pacman.y++;
           pacman.deg = 90;
         }
-        // console.log(e.keyCode);
-        if (world[pacman.y][pacman.x] == 1) {
+
+        if (world[pacman.y][pacman.x] === 1) {
           world[pacman.y][pacman.x] = 0;
           displayWorld();
           score += 10;
           displayScore();
-        } else if (world[pacman.y][pacman.x] == 3) {
+        } else if (world[pacman.y][pacman.x] === 3) {
           world[pacman.y][pacman.x] = 0;
           score += 20;
           displayWorld();
           displayScore();
         }
+
         console.log(e.keyCode);
         displayPacman();
       };
+
       setInterval(function () {
         moveGhosts("ghost1", ghost1);
         moveGhosts("ghost2", ghost2);
