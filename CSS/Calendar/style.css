@@ -1,0 +1,90 @@
+body {
+  height: 950px;
+  display: inline-block;
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+}
+
+.juneJulyAug {
+  height: 20%;
+  width: 100%;
+  display: inline-block;
+  margin-bottom: 20px;
+}
+
+.june {
+  display: inline-block;
+}
+.july21 {
+  display: inline-block;
+  vertical-align: top;
+  margin-left: 300px;
+  margin-right: 300px;
+}
+
+.july21 h1 {
+  font-size: 60pt;
+  display: inline-block;
+}
+.Aug {
+  display: inline-block;
+}
+
+.row .green {
+  height: 90px;
+  width: 241px;
+  border: 2px solid black;
+  display: inline-block;
+  margin: 10px;
+}
+
+.row .block {
+  height: 90px;
+  width: 241px;
+  border: 2px solid black;
+  display: inline-block;
+  margin: 10px;
+}
+
+.row .blue {
+  height: 90px;
+  width: 241px;
+  border: 2px solid black;
+  display: inline-block;
+  margin: 10px;
+}
+
+.row .grey {
+  height: 90px;
+  width: 241px;
+  border: 2px solid #e7e6e6;
+  display: inline-block;
+  margin: 10px;
+}
+
+.date {
+  height: 80%;
+  width: 100%;
+}
+
+.green {
+  background-color: #a9d08e;
+  font-size: 50pt;
+  text-align: center;
+}
+
+.block {
+  font-size: 50pt;
+  text-align: center;
+}
+.blue {
+  font-size: 50pt;
+  text-align: center;
+  background-color: #5b9bd5;
+}
+
+.grey {
+  border: none;
+  background-color: #e7e6e6;
+  color: #e7e6e6;
+  font-size: 50pt;
+}
