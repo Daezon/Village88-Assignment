@@ -1,0 +1,161 @@
+@import url("https://fonts.googleapis.com/css2?family=Roboto+Slab:wght@100;200;300;400;600;700;800;900&display=swap");
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Roboto Slab", serif;
+}
+
+/* body {
+    height: 100vh;
+    width: 100vw;
+    } */
+
+h1 {
+  color: #2d4767;
+  font-weight: 800;
+}
+
+h3 {
+  color: #373a3b;
+  font-weight: 600;
+}
+.container {
+  height: 1080px;
+  width: 50vw;
+  padding: 20px;
+  background-color: #e3e4e6;
+}
+
+.profile img {
+  border-radius: 5px;
+}
+
+.hero1 {
+  display: inline-block;
+}
+
+.hero3 {
+  display: inline-block;
+}
+
+.profile {
+  display: inline-block;
+  margin-bottom: 20px;
+}
+
+.info {
+  padding: 50px;
+  display: inline-block;
+  text-align: center;
+  vertical-align: top;
+  font-size: 17pt;
+}
+
+.hero2 {
+  display: flex;
+  flex-direction: row;
+}
+
+.contact {
+  display: inline;
+}
+
+.list {
+  font-size: 12pt;
+  display: inline;
+}
+
+.Aboutme {
+  text-align: center;
+  border-radius: 5px;
+  background-color: #f0f1f3;
+  display: inline-block;
+}
+
+p {
+  font-size: 12pt;
+  margin: 20px;
+  text-align: justify;
+}
+
+.Apps {
+  padding: 20px;
+  height: 100%;
+  width: 50%;
+  display: inline-block;
+}
+
+.title {
+  text-align: center;
+}
+
+.myproject {
+  margin: 10px;
+  padding: 20px;
+  height: 70%;
+  border-radius: 10px;
+  width: 50%;
+  display: inline-block;
+  background: rgb(195, 207, 219);
+  background: linear-gradient(
+    180deg,
+    rgba(195, 207, 219, 1) 0%,
+    rgba(229, 234, 241, 1) 26%,
+    rgba(242, 245, 249, 1) 44%,
+    rgba(251, 252, 254, 1) 54%,
+    rgba(251, 252, 254, 1) 61%,
+    rgba(195, 207, 219, 1) 91%,
+    rgba(195, 207, 219, 1) 100%
+  );
+}
+
+li {
+  margin: 20px;
+}
+
+.project {
+  font-size: 10pt;
+}
+
+.row {
+  display: inline-block;
+  height: 33%;
+  width: 100%;
+}
+
+.icon {
+  display: inline-block;
+  height: 100%;
+  width: 32%;
+}
+
+.icon img {
+  height: 40%;
+  width: 40%;
+}
+.icons .small {
+  height: 60%;
+  width: 90%;
+}
+.container2 {
+  display: inline-block;
+  vertical-align: middle;
+}
+
+.hero3 {
+  padding: 20px;
+  display: inline-block;
+  background-color: #e3e4e6;
+  padding: 0px 270px 0px 270px;
+}
+
+.hero3 img {
+  height: 30px;
+  width: 30px;
+}
+
+a {
+  color: black;
+}
