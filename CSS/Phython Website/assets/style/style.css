@@ -1,0 +1,52 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  height: 100vh;
+  width: 100vw;
+}
+
+.container {
+  height: 100%;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+}
+
+.content1 {
+  padding: 30px;
+  height: 50%;
+  width: 100%;
+  background: rgb(30, 65, 93);
+  background: linear-gradient(
+    180deg,
+    rgba(30, 65, 93, 1) 0%,
+    rgba(40, 85, 124, 1) 29%
+  );
+}
+.content2 {
+  height: 35%;
+  width: 100%;
+  background-color: #fafafa;
+}
+.content3 {
+  background: rgb(30, 65, 93);
+  background: linear-gradient(
+    180deg,
+    rgb(33, 71, 102) 0%,
+    rgba(40, 85, 124, 1) 29%
+  );
+  height: 15%;
+  width: 100%;
+}
+
+.firstHero1 {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 20%;
+  width: 100%;
+}
