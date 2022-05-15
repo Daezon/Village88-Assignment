@@ -1,0 +1,171 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  height: 70vh;
+  width: 100vw;
+}
+
+h1 {
+  color: #d9ecda;
+  font-size: 50pt;
+}
+
+p {
+  margin-left: 5px;
+  font-weight: bold;
+}
+.container {
+  height: 100%;
+  width: 100%;
+  background-color: #1f5768;
+}
+
+.contentText {
+  padding: 110px 40px 40px 40px;
+  height: 30%;
+  width: 100%;
+  align-items: center;
+}
+
+.text1 {
+  margin-top: 10px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 40%;
+  width: 640px;
+  background-color: #c6cac5;
+}
+
+.text2 {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: #c6cac5;
+  display: none;
+}
+
+.text3 {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: #c6cac5;
+  display: none;
+}
+
+.contentImage {
+  padding: 10px;
+  height: 70%;
+  width: 100%;
+  display: flex;
+  align-items: center;
+}
+
+.frog {
+  position: relative;
+}
+
+.red {
+  position: relative;
+  height: 30px;
+  width: 1100px;
+  background-color: red;
+  margin-right: 10px;
+  border-bottom-right-radius: 20px;
+  border-top-right-radius: 20px;
+}
+
+/* laptop screen */
+
+/* tab screen */
+@media only screen and (max-width: 1223px) {
+  h1 {
+    color: #d9ecda;
+    font-size: 20pt;
+  }
+
+  .frog {
+    height: 250px;
+  }
+
+  .lamok {
+    height: 100px;
+  }
+
+  .red {
+    height: 15px;
+  }
+
+  .text1 {
+    margin-top: 10px;
+    display: none;
+    align-items: center;
+    justify-content: center;
+    height: 40%;
+    width: 640px;
+    background-color: #c6cac5;
+  }
+
+  .text2 {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: #c6cac5;
+    height: 30%;
+    width: 300px;
+  }
+
+  .text3 {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: #c6cac5;
+    display: none;
+  }
+}
+
+/* phone screen */
+@media only screen and (max-width: 480px) {
+  .frog {
+    height: 150px;
+  }
+
+  .lamok {
+    height: 70px;
+  }
+
+  .text1 {
+    margin-top: 10px;
+    display: none;
+    align-items: center;
+    justify-content: center;
+    height: 40%;
+    width: 640px;
+    background-color: #c6cac5;
+  }
+
+  .text2 {
+    display: none;
+    align-items: center;
+    justify-content: center;
+    background-color: #c6cac5;
+  }
+
+  .text3 {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: #c6cac5;
+    height: 50%;
+    width: 200px;
+    font-size: 10px;
+  }
+
+  p {
+    font-size: 10px;
+  }
+}

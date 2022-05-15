@@ -1,0 +1,181 @@
+/*CSS reset settings here*/
+* {
+  margin: 0px;
+  padding: 0px;
+}
+#wrapper {
+  width: 940px;
+  background-color: #ffd9b7;
+  margin: 10px auto;
+  padding: 10px;
+}
+#logo {
+  min-height: 130px;
+  width: 260px;
+  background-color: #b97a57;
+  display: inline-block;
+  margin: 0px 0px 10px 0px;
+}
+#navigation {
+  min-height: 130px;
+  width: 666px;
+  background-color: #ff7f27;
+  margin: 0px 0px 10px 10px;
+  display: inline-block;
+}
+#main_content {
+  min-height: 250px;
+  width: 900px;
+  background-color: #880015;
+  padding: 20px;
+  display: inline-block;
+}
+#about {
+  min-height: 250px;
+  width: 650px;
+  background-color: #ffaec9;
+  display: inline-block;
+  margin: 10px;
+}
+#advertisement {
+  min-height: 200px;
+  width: 155px;
+  background-color: #c8bfe7;
+  margin: 0px 10px 60px 40px;
+  display: inline-block;
+}
+.sponsors {
+  min-height: 65px;
+  width: 250px;
+  background-color: #ffff88;
+  display: inline-block;
+  margin: 25px 30px 25px 30px;
+}
+
+@media only screen and (max-width: 1024px) {
+  #wrapper {
+    width: 940px;
+    background-color: #ffd9b7;
+    margin: 10px auto;
+    padding: 10px;
+  }
+  #logo {
+    min-height: 130px;
+    width: 260px;
+    background-color: #b97a57;
+    display: inline-block;
+    margin: 0px 0px 10px 0px;
+  }
+  #navigation {
+    min-height: 130px;
+    width: 666px;
+    background-color: #ff7f27;
+    margin: 0px 0px 10px 10px;
+    display: inline-block;
+  }
+  #main_content {
+    min-height: 250px;
+    width: 900px;
+    background-color: #880015;
+    padding: 20px;
+    display: inline-block;
+  }
+  #about {
+    min-height: 250px;
+    width: 650px;
+    background-color: #ffaec9;
+    display: inline-block;
+    margin: 10px;
+  }
+  #advertisement {
+    min-height: 200px;
+    width: 155px;
+    background-color: #c8bfe7;
+    margin: 0px 10px 60px 40px;
+    display: inline-block;
+  }
+  .sponsors {
+    min-height: 65px;
+    width: 250px;
+    background-color: #ffff88;
+  }
+}
+
+@media only screen and (max-width: 800px) {
+  #wrapper {
+    padding: 0px;
+  }
+  #main_content {
+    min-height: 250px;
+    width: 900px;
+    background-color: #880015;
+    padding: 20px;
+    align-items: center;
+    display: flex;
+  }
+  #about {
+    width: 100%;
+  }
+
+  #advertisement {
+    display: none;
+  }
+
+  #logo {
+    min-height: 130px;
+    width: 260px;
+    background-color: #b97a57;
+    display: inline-block;
+  }
+
+  .sponsors {
+    min-height: 65px;
+    width: 468px;
+    background-color: #ffff88;
+    margin: 0;
+  }
+}
+
+@media only screen and (max-width: 480px) {
+  #wrapper {
+    padding: 0px;
+  }
+  #main_content {
+    min-height: 250px;
+    width: 900px;
+    background-color: #880015;
+    padding: 20px;
+    align-items: center;
+    display: flex;
+  }
+  #about {
+    width: 100%;
+  }
+
+  #advertisement {
+    display: none;
+  }
+
+  #logo {
+    min-height: 130px;
+    width: 940px;
+    background-color: #b97a57;
+    display: flex;
+    margin: 0;
+  }
+
+  .sponsors {
+    min-height: 65px;
+    width: 940px;
+    background-color: #ffff88;
+    margin: 10px 0px 10px 0px;
+  }
+
+  #navigation {
+    min-height: 130px;
+    width: 940px;
+    background-color: #ff7f27;
+    margin: 0;
+    display: flex;
+  }
+}
