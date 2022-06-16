@@ -1,0 +1,13 @@
+#div1 {
+	width: 970px;
+	height: 700px;
+	background-color: bisque;
+	text-align: center;
+}
+span {
+	font-weight: bold;
+}
+.cookie {
+	width: 100px;
+	height: 100px;
+}
