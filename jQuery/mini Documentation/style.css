@@ -1,0 +1,40 @@
+.div1 {
+	width: 970px;
+	background-color: rgb(70, 167, 70);
+}
+.div2 {
+	width: 200px;
+	background-color: bisque;
+	display: inline-block;
+}
+.div2 button {
+	width: 100px;
+	margin-left: 50px;
+	margin-top: 10px;
+	background-color: rgb(255, 218, 173);
+}
+.div3 {
+	width: 750px;
+	background-color: bisque;
+	display: inline-block;
+	vertical-align: top;
+	text-align: center;
+}
+.div4 {
+	width: 600px;
+	background-color: rgb(109, 98, 84);
+	height: 350px;
+	margin-left: 70px;
+	margin-right: 50px;
+}
+.intro {
+	font-size: 150%;
+	color: red;
+}
+#attr {
+	width: 500px;
+	background-color: rgb(109, 98, 84);
+	height: 100px;
+	margin-left: 70px;
+	margin-right: 50px;
+}

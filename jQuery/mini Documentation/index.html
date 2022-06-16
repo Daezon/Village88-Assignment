@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<title>Document</title>
+		<link rel="stylesheet" href="style.css" />
+	</head>
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.0/jquery.min.js"></script>
+
+	<script>
+		$(document).ready(function () {
+			$("#button1").click(function () {
+				$("#p2").addClass("intro");
+				$("#p1").text(
+					" addClass() - A function returning one or more space-separated class names or an array of class names to be added to the existing class name(s)."
+				);
+			});
+			$("#button2").click(function () {
+				$("#p2").after("<p>Example of After</p>");
+				$("#p1").text(
+					" after() - A function that returns an HTML string, DOM element(s), text node(s), or jQuery object to insert after each element in the set of matched elements"
+				);
+			});
+			$("#button3").click(function () {
+				console.log($("#p2").attr("id"));
+				$("#p1").text(
+					"The attr() method sets or returns attributes and values of the selected elements. When this method is used to return the attribute value, it returns the value of the FIRST matched element."
+				);
+			});
+			$("#button4").click(function () {
+				$("#p2").before("<p>Example of before</p>");
+				$("#p1").text(
+					"before( function ) A function that returns an HTML string, DOM element(s), text node(s), or jQuery object to insert before each element in the set of matched elements. Receives the index position of the element in the set as an argument. Within the function, this refers to the current element in the set."
+				);
+			});
+			$("#button5").click(function () {
+				$("#p2").hide();
+				$("#p1").text(
+					"The click event occurs when an element is clicked. The click() method triggers the click event, or attaches a function to run when a click event occurs."
+				);
+			});
+			$("#button6").click(function () {
+				$("#p2").fadeIn();
+				$("#p1").text(
+					"fadeIn() method animates the opacity of the matched elements. It is similar to the . fadeTo() method but that method does not unhide the element and can specify the final opacity level. Durations are given in milliseconds; higher values indicate slower animations, not faster ones."
+				);
+			});
+			$("#button7").click(function () {
+				$("#p2").fadeOut();
+				$("#p1").text(
+					"The . fadeOut() method animates the opacity of the matched elements. Once the opacity reaches 0, the display style property is set to none , so the element no longer affects the layout of the page. Durations are given in milliseconds; higher values indicate slower animations, not faster ones."
+				);
+			});
+			$("#button8").click(function () {
+				$("#p2").html("<b>Example of HTML</b> ");
+				$("#p1").text(
+					"jQuery is an open-sourced JavaScript library that simplifies creation and navigation of web applications. Specifically, jQuery simplifies HTML Document Object Model (DOM) manipulation, Asynchronous JavaScript and XML (Ajax) and event handling."
+				);
+			});
+			$("#button9").click(function () {
+				$("#p2").show();
+				$("#p1").text(
+					"show() method animates the width, height, and opacity of the matched elements simultaneously. Durations are given in milliseconds; higher values indicate slower animations, not faster ones. The strings 'fast' and 'slow' can be supplied to indicate durations of 200 and 600 milliseconds, respectively. As of jQuery 1.4."
+				);
+			});
+			$("#button10").click(function () {
+				$("#p2").slideDown();
+				$("#p1").text(
+					"The slideDown() Method in jQuery is used to check the visibility of selected elements or to show the hidden elements. It works on two types of hidden elements: Elements hidden using using jQuery methods. Elements hidden using display: none in CSS."
+				);
+			});
+			$("#button11").click(function () {
+				$("#p2").slideToggle();
+				$("#p1").text(
+					"The . slideToggle() method animates the height of the matched elements. This causes lower parts of the page to slide up or down, appearing to reveal or conceal the items. If the element is initially displayed, it will be hidden; if hidden, it will be shown."
+				);
+			});
+			$("#button12").click(function () {
+				$("#p2").slideUp();
+				$("#p1").text(
+					"The . slideUp() method animates the height of the matched elements. This causes lower parts of the page to slide up, appearing to conceal the items."
+				);
+			});
+			$("#button13").click(function () {
+				$("#p2").text("Example of Text");
+				$("#p1").text(
+					"The text() method sets or returns the text content of the selected elements. When this method is used to return content, it returns the text content of all matched elements (HTML markup will be removed). When this method is used to set content, it overwrites the content of ALL matched elements."
+				);
+			});
+			$("#button14").click(function () {
+				$("#p2").toggle();
+				$("#p1").text(
+					"TThe toggle() method toggles between hide() and show() for the selected elements. This method checks the selected elements for visibility. show() is run if an element is hidden. hide() is run if an element is visible - This creates a toggle effect."
+				);
+			});
+			$("#button15").click(function () {
+				$("input").val("Example of val()");
+				$("#p1").text(
+					"val() method is primarily used to get the values of form elements such as input , select and textarea . When called on an empty collection, it returns undefined . When the first element in the collection is a select-multiple (i.e., a select element with the multiple attribute set)."
+				);
+			});
+		});
+	</script>
+
+	<body>
+		<div class="div1">
+			<div class="div2">
+				<button id="button1">.addClass()</button>
+				<button id="button2">.after()</button>
+				<button id="button3">.attr()</button>
+				<button id="button4">.before()</button>
+				<button id="button5">.click()</button>
+				<button id="button6">.fadeIn()</button>
+				<button id="button7">.fadeOut()</button>
+				<button id="button8">.html()</button>
+				<button id="button9">.show()</button>
+				<button id="button10">.slideDown()</button>
+				<button id="button11">.slideToggle()</button>
+				<button id="button12">.slideUp()</button>
+				<button id="button13">.texts()</button>
+				<button id="button14">.toggle()</button>
+				<button id="button15">.val()</button>
+			</div>
+			<div class="div3">
+				<h1>My Mini Documention</h1>
+				<p id="p1">Example</p>
+				<div class="div4">
+					<input type="text" />
+					<p id="p2">Sample Demo</p>
+				</div>
+			</div>
+		</div>
+	</body>
+</html>
