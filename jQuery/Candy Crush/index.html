@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<title>Document</title>
+		<link rel="stylesheet" href="styles.css" />
+		<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.0/jquery.min.js"></script>
+	</head>
+	<script>
+		$(document).ready(function () {
+			$("#bnt1").click(function () {
+				$("#img1").attr("src", "orange_candy.png");
+			});
+			$("#bnt2").click(function () {
+				$("#img2").attr("src", "red_candy.png");
+			});
+			$("#bnt3").click(function () {
+				$("#img3").attr("src", "red_candy.png");
+			});
+			$("#bnt4").click(function () {
+				$("#img4").attr("src", "yellow_candy.png");
+			});
+
+			$("#bnt5").click(function () {
+				$("#img1").attr("src", "orange_candy.png");
+				$("#img5").attr("src", "red_candy.png");
+			});
+			$("#bnt6").click(function () {
+				$("#img2").attr("src", "red_candy.png");
+				$("#img6").attr("src", "multicolor_candy.png");
+			});
+			$("#bnt7").click(function () {
+				$("#img3").attr("src", "red_candy.png");
+				$("#img7").attr("src", "orange_candy.png");
+			});
+			$("#bnt8").click(function () {
+				$("#img4").attr("src", "yellow_candy.png");
+				$("#img8").attr("src", "red_candy.png");
+			});
+
+			$("#bnt9").click(function () {
+				$("#img1").attr("src", "multicolor_candy.png");
+				$("#img9").attr("src", "orange_candy.png");
+				$("#img5").attr("src", "red_candy.png");
+			});
+			$("#bnt10").click(function () {
+				$("#img6").attr("src", "red_candy.png");
+				$("#img10").attr("src", "multicolor_candy.png");
+				$("#img2").attr("src", "multicolor_candy.png");
+			});
+			$("#bnt11").click(function () {
+				$("#img7").attr("src", "red_candy.png");
+				$("#img11").attr("src", "orange_candy.png");
+				$("#img3").attr("src", "orange_candy.png");
+			});
+			$("#bnt12").click(function () {
+				$("#img8").attr("src", "yellow_candy.png");
+				$("#img12").attr("src", "red_candy.png");
+				$("#img4").attr("src", "yellow_candy.png");
+			});
+
+			$("#bnt13").click(function () {
+				$("#img1").attr("src", "red_candy.png");
+				$("#img5").attr("src", "multicolor_candy.png");
+				$("#img13").attr("src", "orange_candy.png");
+				$("#img3").attr("src", "red_candy.png");
+			});
+			$("#bnt14").click(function () {
+				$("#img2").attr("src", "multicolor_candy.png");
+				$("#img10").attr("src", "red_candy.png");
+				$("#img14").attr("src", "multicolor_candy.png");
+				$("#img6").attr("src", "multicolor_candy.png");
+			});
+			$("#bnt15").click(function () {
+				$("#img3").attr("src", "red_candy.png");
+				$("#img11").attr("src", "red_candy.png");
+				$("#img15").attr("src", "orange_candy.png");
+				$("#img7").attr("src", "orange_candy.png");
+			});
+			$("#bnt16").click(function () {
+				$("#img4").attr("src", "yellow_candy.png");
+				$("#img12").attr("src", "yellow_candy.png");
+				$("#img16").attr("src", "red_candy.png");
+				$("#img8").attr("src", "yellow_candy.png");
+			});
+			$("#reset").click(function () {
+				location.reload();
+			});
+		});
+	</script>
+
+	<body>
+		<div id="div1">
+			<div id="div2">
+				<button id="bnt1"><img src="red_candy.png" alt="" id="img1" /></button>
+				<button id="bnt2">
+					<img src="multicolor_candy.png" alt="" id="img2" />
+				</button>
+				<button id="bnt3">
+					<img src="orange_candy.png" alt="" id="img3" />
+				</button>
+				<button id="bnt4"><img src="red_candy.png" alt="" id="img4" /></button>
+
+				<button id="bnt5">
+					<img src="orange_candy.png" alt="" id="img5" />
+				</button>
+				<button id="bnt6">
+					<img src="yellow_candy.png" alt="" id="img6" />
+				</button>
+				<button id="bnt7"><img src="red_candy.png" alt="" id="img7" /></button>
+				<button id="bnt8"><img src="red_candy.png" alt="" id="img8" /></button>
+
+				<button id="bnt9"><img src="red_candy.png" alt="" id="img9" /></button>
+				<button id="bnt10">
+					<img src="red_candy.png" alt="" id="img10" />
+				</button>
+				<button id="bnt11">
+					<img src="yellow_candy.png" alt="" id="img11" />
+				</button>
+				<button id="bnt12">
+					<img src="yellow_candy.png" alt="" id="img12" />
+				</button>
+
+				<button id="bnt13">
+					<img src="multicolor_candy.png" alt="" id="img13" />
+				</button>
+				<button id="bnt14">
+					<img src="orange_candy.png" alt="" id="img14" />
+				</button>
+				<button id="bnt15">
+					<img src="yellow_candy.png" alt="" id="img15" />
+				</button>
+				<button id="bnt16">
+					<img src="red_candy.png" alt="" id="img16" />
+				</button>
+			</div>
+
+			<button id="reset">RESET</button>
+		</div>
+	</body>
+</html>
