@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<title>Document</title>
+		<link rel="stylesheet" href="style.css" />
+	</head>
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.0/jquery.min.js"></script>
+	<script>
+		$(document).ready(function () {
+			$(".puzzle").click(function () {
+				let img_src = $(this).hasClass("active")
+					? "question.png"
+					: $(this).attr("data-image-src");
+				$(this).hasClass("active")
+					? $(this).removeClass("active")
+					: $(this).addClass("active");
+				$(this).attr("src", img_src);
+			});
+		});
+	</script>
+	<body>
+		<div class="div1">
+			<img
+				src="question.png"
+				data-image-src="bag.jpg"
+				class="puzzle"
+				id="img1"
+			/>
+			<img
+				src="question.png"
+				data-image-src="heels.jpg"
+				class="puzzle"
+				id="img2"
+			/>
+			<img
+				src="question.png"
+				data-image-src="cap.jpg"
+				class="puzzle"
+				id="img3"
+			/>
+			<img
+				src="question.png"
+				data-image-src="belt.jpg"
+				class="puzzle"
+				id="img4"
+			/>
+			<br />
+
+			<img
+				src="question.png"
+				data-image-src="cap.jpg"
+				class="puzzle"
+				id="img5"
+			/>
+			<img
+				src="question.png"
+				data-image-src="belt.jpg"
+				class="puzzle"
+				id="img6"
+			/>
+			<img
+				src="question.png"
+				data-image-src="bag.jpg"
+				class="puzzle"
+				id="img7"
+			/>
+			<img
+				src="question.png"
+				data-image-src="heels.jpg"
+				class="puzzle"
+				id="img8"
+			/>
+			<br />
+
+			<img
+				src="question.png"
+				data-image-src="cap.jpg"
+				class="puzzle"
+				id="img9"
+			/>
+			<img
+				src="question.png"
+				data-image-src="heels.jpg"
+				class="puzzle"
+				id="img10"
+			/>
+			<img
+				src="question.png"
+				data-image-src="cap.jpg"
+				class="puzzle"
+				id="img11"
+			/>
+			<img
+				src="question.png"
+				data-image-src="heels.jpg"
+				class="puzzle"
+				id="img12"
+			/>
+		</div>
+	</body>
+</html>

@@ -1,0 +1,24 @@
+.div1 {
+	width: 420px;
+	height: 320px;
+	background-color: bisque;
+	display: inline-block;
+	/* justify-content: center; */
+	/* align-items: center;  */
+	vertical-align: middle;
+}
+#img1,
+#img2,
+#img3,
+#img4,
+#img5,
+#img6,
+#img7,
+#img8,
+#img9,
+#img10,
+#img11,
+#img12 {
+	width: 100px;
+	height: 100px;
+}
