@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<title>Document</title>
+		<link rel="stylesheet" href="style.css" />
+	</head>
+	<script
+		type="text/javascript"
+		src="http://code.jquery.com/jquery-1.10.2.min.js"
+	></script>
+	<script type="text/javascript">
+		$(document).ready(function () {
+			$("#main_box").click(function () {
+				// alert('you clicked the main box!');
+				//comment this out when you have figured out what event.stopPropagation is used for
+			});
+			$(".mini_boxes").click(function (event) {
+				// event.stopPropagation();
+				var img = $(this).attr("src");
+				$("#main_box").css("background-image", "url(" + img + ")");
+				var $this = $(this);
+				if ($this.hasClass("active")) {
+					$this.removeClass("active");
+				} else {
+					$(".active").removeClass("active");
+					$this.addClass("active");
+				}
+			});
+		});
+
+		// alert("you clicked a mini box!");
+		// $(this).css("border-color", "red")
+		// console.log("yellow")
+	</script>
+
+	<body>
+		<h1>Background Chooser</h1>
+		<div id="main_box">
+			<img src="background5.gif" class="mini_boxes" />
+			<img src="background2.gif" class="mini_boxes" />
+			<img src="background3.gif" class="mini_boxes" />
+			<img src="background6.gif" class="mini_boxes" />
+		</div>
+	</body>
+</html>
