@@ -1,0 +1,104 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>jQuery UI Tabs - Default functionality</title>
+    <link rel="stylesheet" href="//code.jquery.com/ui/1.13.1/themes/base/jquery-ui.css">
+    <link rel="stylesheet" href="/resources/demos/style.css">
+    <script src="https://code.jquery.com/jquery-3.6.0.js"></script>
+    <script src="https://code.jquery.com/ui/1.13.1/jquery-ui.js"></script>
+    <link rel="stylesheet" href="style.css">
+    <script>
+        $(function () {
+            $("#tabs").tabs($("#tabs-4").accordion());
+        });
+    </script>
+</head>
+
+<body>
+    <div id="tabs">
+        <h1>Web Review</h1>
+        <h3>By Jeff Daezon Almarez</h3>
+        <ul>
+            <li><a href="#tabs-1">Overview</a></li>
+            <li><a href="#tabs-2">History</a></li>
+            <li><a href="#tabs-3">Three Fundamental Technologies</a></li>
+            <li><a href="#tabs-4">FAQ</a></li>
+        </ul>
+        <div id="tabs-1">
+            <p>The World Wide Web is abbreviated as WWW. The World Wide Web is defined as "all the resources and users
+                on the Internet who use the Hypertext Transfer Protocol" (HTTP).</p>
+            <p>The World Wide Web Consortium, which Web creator Tim Berners-Lee helped form, provides a larger
+                description (W3C).</p>
+            <p>The World Wide Web is a collection of network-accessible material that represents human knowledge.</p>
+            <p>Simply described, the World Wide Web is a method of transmitting information between computers connected
+                to the Internet, resulting in a massive collection of interactive multimedia resources.</p>
+        </div>
+        <div id="tabs-2">
+            <p>While working at CERN in 1989, British scientist Tim Berners-Lee devised the World Wide Web (WWWW). The
+                Web was created to address the demand for automated information sharing among scientists at universities
+                and research organizations around the world.</p>
+            <p>CERN is not a solitary laboratory, but rather the hub of an international community of approximately 17
+                000 scientists from over 100 nations. The scientists normally work at universities and government
+                laboratories in their home countries, although spending some time at CERN. As a result, reliable
+                communication mechanisms are required.</p>
+            <p>The WWW's primary concept was to combine computer, data network, and hypertext technologies into a
+                powerful and user-friendly global information system.</p>
+        </div>
+        <div id="tabs-3">
+            <ul>
+                <li>HTML: HyperText Markup Language. The markup (formatting) language for the web.</li>
+                <li>URI: Uniform Resource Identifier. A kind of “address” that is unique and used to identify to each
+                    resource on the web. It is also commonly called a URL.</li>
+                <li>HTTP: Hypertext Transfer Protocol. Allows for the retrieval of linked resources from across the web.
+                </li>
+            </ul>
+        </div>
+        <div id="tabs-4">
+            <h3>What are the common bottlenecks for a website not scaling up?</h3>
+            <div>
+                <p>
+                    When a website isn't scaling up, there are two main bottlenecks: DDoS and bandwidth. DDoS
+                    (Distributed Denial of Service) is a type of attack that slows down a server by sending harmful
+                    answers through infected computers.
+                    Due to the bandwidth constraint imposed by the server or the network, when a significant number of
+                    people visit the website, the server will slow down.
+                </p>
+            </div>
+            <h3>How to address these common bottlenecks?</h3>
+            <div>
+                <p>
+                    To address these issues, consider the following options:
+
+
+                </p>
+                <ul>
+                    <li>Adapt suitable technology to protect against future DDoS attacks, such as Cloudfare.</li>
+                    <li>Update both the server's operating system and applications.</li>
+                    <li>To accommodate large users, increase the bandwidth.</li>
+                </ul>
+            </div>
+            <h3>What could be possible causes if a http response is generated quickly but it takes time for a http
+                request to be received (by the web server)?</h3>
+            <div>
+                <p>
+                    The origin of the server could be the cause of this issue; for example, you may be from the
+                    Philippines, yet you are accessing the site from Antarctica. Consider how quick the internet is, but
+                    how long it takes for the server to respond to your request.
+                </p>
+
+            </div>
+            <h3>What would be the fixes for these possible causes?</h3>
+            <div>
+                <p>
+                    Try to host the website on a server that is as close to the user as possible.
+                </p>
+            </div>
+        </div>
+
+
+</body>
+
+</html>
