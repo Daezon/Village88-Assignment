@@ -1,0 +1,38 @@
+* {
+	margin: 0px;
+	padding: 0px;
+}
+#main {
+	width: fit-content;
+	background-color: rgb(130, 204, 200);
+	text-align: center;
+	font-family: "Trebuchet MS", "Lucida Sans Unicode", "Lucida Grande",
+		"Lucida Sans", Arial, sans-serif;
+}
+#main .column {
+	display: inline-block;
+	vertical-align: top;
+	border: 1px solid brown;
+	width: 300px;
+	min-height: 400px;
+	height: fit-content;
+	margin: 0 4px;
+}
+
+h1,
+h2,
+h3 {
+	text-align: center;
+	font-family: "Trebuchet MS", "Lucida Sans Unicode", "Lucida Grande",
+		"Lucida Sans", Arial, sans-serif;
+}
+#main .column .draggable {
+	position: relative;
+	margin: 5px 10px;
+	padding: 20px 10px;
+	background-color: white;
+}
+img {
+	width: 40px;
+	margin-top: 10px;
+}

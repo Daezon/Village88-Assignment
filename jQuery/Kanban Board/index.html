@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="utf-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1" />
+		<title>jQuery UI Sortable - Default functionality</title>
+		<link
+			rel="stylesheet"
+			href="//code.jquery.com/ui/1.13.1/themes/base/jquery-ui.css"
+		/>
+		<link rel="stylesheet" href="/resources/demos/style.css" />
+		<link rel="stylesheet" href="style.css" />
+
+		<script src="https://code.jquery.com/jquery-3.6.0.js"></script>
+		<script src="https://code.jquery.com/ui/1.13.1/jquery-ui.js"></script>
+		<script>
+			$(function () {
+				$("#sortable1,#sortable2,#sortable3,#sortable4,#sortable5")
+					.sortable({
+						connectWith: ".column",
+					})
+					.disableSelection();
+			});
+		</script>
+	</head>
+
+	<body>
+		<h1>KANBAN BOARD</h1>
+		<h3>BY Jeff Daezon Almarez</h3>
+		<div id="main">
+			<div id="sortable1" class="column">
+				<h2>To-do</h2>
+				<div id="task1" class="draggable ui-widget-content">
+					<p>GitHub</p>
+					<img src="github.png" />
+				</div>
+				<div id="task2" class="draggable ui-widget-content">
+					<p>JavaScript</p>
+					<img src="JavaScript.png" />
+				</div>
+				<div id="task3" class="draggable ui-widget-content">
+					<p>MangoDB</p>
+					<img src="mongodb.png" />
+				</div>
+			</div>
+
+			<div id="sortable2" class="column">
+				<h2>In-progress</h2>
+				<div id="task4" class="draggable ui-widget-content">
+					<p>MySQL</p>
+					<img src="mysql.png" />
+				</div>
+			</div>
+
+			<div id="sortable3" class="column">
+				<h2>For Approval</h2>
+				<div id="task5" class="draggable ui-widget-content">
+					<p>PHP</p>
+					<img src="php.png" />
+				</div>
+				<div id="task6" class="draggable ui-widget-content">
+					<p>jQuery</p>
+					<img src="jQuery.png" />
+				</div>
+			</div>
+
+			<div id="sortable4" class="column">
+				<h2>Testing</h2>
+			</div>
+
+			<div id="sortable5" class="column">
+				<h2>Done</h2>
+				<div id="task7" class="draggable ui-widget-content">
+					<p>Django</p>
+					<img src="django.png" />
+				</div>
+			</div>
+		</div>
+	</body>
+</html>
