@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<meta name="author" content="FrontendScript" />
+		<title>jQuery Custom Confirm Box Example</title>
+		<!-- Confirm Box CSS -->
+		<link rel="stylesheet" href="css/confirm-box.css" />
+		<!--Only for demo purpose - no need to add.-->
+		<link rel="stylesheet" href="css/demo.css" />
+	</head>
+	<body>
+		<div class="ScriptTop">
+			<div class="rt-container">
+				<div class="col-rt-4" id="float-right">
+					<center>
+						<!-- AD HERE -->
+					</center>
+				</div>
+				<div class="col-rt-2">
+					<ul>
+						<li>
+							<a
+								href="https://frontendscript.com/custom-confirm-box-in-jquery"
+								title="Back to tutorial page"
+								>Back to Tutorial</a
+							>
+						</li>
+					</ul>
+				</div>
+			</div>
+		</div>
+
+		<header class="ScriptHeader">
+			<div class="rt-container">
+				<div class="col-rt-12">
+					<div class="rt-heading">
+						<h1>jQuery Custom Confirm Box Example</h1>
+						<p>
+							A jQuery plugin to create custom confirm box with yes/no option.
+						</p>
+					</div>
+				</div>
+			</div>
+		</header>
+
+		<section>
+			<div class="rt-container">
+				<div class="col-rt-12">
+					<div class="Scriptcontent">
+						<!-- DEMO HTML -->
+						<div class="btn-container">
+							<p>Click the button below to open confirm box!</p>
+							<button id="visitExternalLink" class="button-default link">
+								Go to Google
+							</button>
+						</div>
+						<!-- END DEMO HTML -->
+					</div>
+				</div>
+			</div>
+		</section>
+
+		<!-- jQuery -->
+		<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.1.0/jquery.min.js"></script>
+		<!-- Confirm Bos JS -->
+		<script src="js/confirm-box.js"></script>
+
+		<script>
+			(function ($) {
+				$("#visitExternalLink").click(function () {
+					Confirm(
+						"Go to Google",
+						"Are you sure you want to visit Google",
+						"Yes",
+						"Cancel",
+						"https://www.google.com"
+					);
+				});
+			})(jQuery);
+		</script>
+	</body>
+</html>

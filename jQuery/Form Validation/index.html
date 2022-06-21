@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="utf-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1" />
+		<title>jQuery UI Datepicker - Default functionality</title>
+		<link
+			rel="stylesheet"
+			href="//code.jquery.com/ui/1.13.1/themes/base/jquery-ui.css"
+		/>
+		<link rel="stylesheet" href="/resources/demos/style.css" />
+		<script src="https://code.jquery.com/jquery-3.6.0.js"></script>
+		<script src="https://code.jquery.com/ui/1.13.1/jquery-ui.js"></script>
+		<script>
+			$(document).ready(function () {
+				$("#submit").click(function () {
+					$('input[type="text"]').each(function () {
+						if ($.trim($(this).val()) == "") {
+							alert("Missing Fields");
+						}
+					});
+					if (!$("input[type='radio']:checked").val()) {
+						alert("Nothing is checked!");
+						return false;
+					}
+					if (!$("input[type='checkbox']:checked").val()) {
+						alert("Nothing is checked!");
+						return false;
+					}
+					if ($("#fieldID").val() == "") {
+						alert("no date selected");
+					} else {
+						alert("Thank you");
+					}
+				});
+			});
+			$(function () {
+				$("#datepicker").datepicker();
+			});
+		</script>
+	</head>
+
+	<body>
+		<div id="div1">
+			<h1>PIZZA ORDER FORM</h1>
+			<label for="firstname">First Name:</label>
+			<input type="text" id="firstname" required class="text" /><br />
+			<label for="lastname">Last Name:</label>
+			<input type="text" id="lastname" required class="text" /><br />
+			<label for="email">Email Address:</label>
+			<input type="text" id="email" required class="text" /><br />
+			<label for="contact">Contact Number:</label>
+			<input type="text" id="contact" required class="text" /><br />
+			<label for="deliverydate">Preferred Delivery Date:</label>
+			<p>Date: <input type="text" id="datepicker" /></p>
+			<h4>Size:</h4>
+			<input type="radio" id="small" required class="text" />
+			<label for="small">Small</label>
+			<input type="radio" id="medium" required class="text" />
+			<label for="medium">Medium</label>
+			<input type="radio" id="large" required class="text" />
+			<label for="large">Large</label> <br />
+			<br />
+			<h4>Flavor:</h4>
+			<input type="checkbox" id="hawaiian" required class="text" />
+			<label for="hawaiian">Hawaiian (Php 150.00)</label>
+			<select name="price" required>
+				<option value="1">1</option>
+				<option value="2">2</option>
+				<option value="3">3</option>
+				<option value="4">4</option>
+			</select>
+			<br />
+			<input type="checkbox" id="pepperoni" required class="text" />
+			<label for="pepperoni">Pepperoni (Php 140.00)</label>
+			<select name="price" required>
+				<option value="1">1</option>
+				<option value="2">2</option>
+				<option value="3">3</option>
+				<option value="4">4</option></select
+			><br />
+			<input type="checkbox" id="vegetable" required class="text" />
+			<label for="vegetable">Vegetable (Php 130.00)</label>
+			<select name="price" required>
+				<option value="1">1</option>
+				<option value="2">2</option>
+				<option value="3">3</option>
+				<option value="4">4</option>
+			</select>
+			<br />
+			<br />
+			<label for="credit">Credit Card Number:</label>
+			<input type="text" id="credit" required class="text" /> <br />
+			<label for="pin">Pin:</label>
+			<input type="password" id="pin" required class="text" /><br />
+			<br />
+			<label for="additional">Additional Note:</label>
+			<input type="text" id="additional" required class="text" /> <br />
+			<br />
+			<input type="submit" name="Submit Order" id="submit" />
+		</div>
+	</body>
+</html>
